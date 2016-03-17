@@ -1,13 +1,13 @@
 <?php
 
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use Behat\MinkExtension\Context\MinkContext;
+
 
 /**
  * Behat context class.
  */
-class FeatureContext implements SnippetAcceptingContext
+class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
     /**
      * Initializes context.
@@ -17,5 +17,13 @@ class FeatureContext implements SnippetAcceptingContext
      */
     public function __construct()
     {
+    }
+
+    /**
+     * @Then /^I spew and die$/
+     */
+    public function iSpewAndDie()
+    {
+        throw new Exception($this->getSession()->getPage()->getText());
     }
 }
