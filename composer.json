@@ -1,0 +1,13 @@
+{
+  "name": "vhraban/symfony-demo-behat",
+  "description": "Behat tests for symfony-demo.",
+  "keywords": ["behat", "mink"],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "behat/behat": "3.0.6",
+    "behat/mink": "1.6.*",
+    "behat/mink-extension": "*",
+    "behat/mink-goutte-driver": "*"
+  }
+}
